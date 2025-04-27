@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Appointments</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <header class="bg-blue-900 text-white text-center py-5 text-3xl font-bold">
+        All Appointments
+    </header>
+
+    <main class="flex flex-1 bg-gradient-to-br from-yellow-100 to-green-200 p-10">
+        <div class="bg-white p-8 rounded-2xl shadow-2xl w-full">
+            <h2 class="text-2xl font-bold mb-6 text-blue-800 text-center">Appointments</h2>
+
+            <table class="min-w-full text-left text-md">
+                <thead class="bg-blue-700 text-white">
+                    <tr>
+                        <th class="px-6 py-4">Patient</th>
+                        <th class="px-6 py-4">Doctor</th>
+                        <th class="px-6 py-4">Date</th>
+                        <th class="px-6 py-4">Time</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white">
+                    {% for appointment in appointments %}
+                        <tr class="border-b hover:bg-gray-100">
+                            <td class="px-6 py-4">{{ appointment.patient.name }}</td>
+                            <td class="px-6 py-4">{{ appointment.doctor.name }}</td>
+                            <td class="px-6 py-4">{{ appointment.date }}</td>
+                            <td class="px-6 py-4">{{ appointment.time }}</td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="4" class="text-center py-8 text-gray-600">
+                                No appointments found.
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="bg-blue-900 text-white text-center py-3 text-sm">
+        &copy; 2025 Hospital Management System
+    </footer>
+
+</body>
+</html>

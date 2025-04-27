@@ -1,6 +1,52 @@
-<form method= "post">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-blue-900 text-white text-center py-5 text-3xl font-bold">
+        Hospital Management System
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex flex-1 items-center justify-center bg-gradient-to-br from-teal-200 to-blue-300">
+        <div class="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md">
+            <h2 class="text-3xl font-bold mb-6 text-center text-blue-800">Create an Account</h2>
+            <form method="post" class="space-y-5">
+                {% csrf_token %}
+                
+                <div class="space-y-4">
+                    {{ form.as_p }}
+                </div>
+
+                <button type="submit" class="w-full bg-blue-800 hover:bg-blue-900 text-white font-semibold py-2 px-4 rounded-xl transition duration-300">
+                    Register
+                </button>
+            </form>
+
+            <p class="text-center text-sm text-gray-600 mt-6">
+                Already have an account? 
+                <a href="{% url 'login' %}" class="text-blue-700 hover:underline font-semibold">Login here</a>.
+            </p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white text-center py-3 text-sm">
+        &copy; 2025 Hospital Management System. All rights reserved.
+    </footer>
+
+</body>
+</html>
+
+
+{% comment %} <form method= "post">
      {% csrf_token %}
      {{ form.as_p}}
      <button type= "submit">Register</button>
 </form>
-
+ {% endcomment %}
