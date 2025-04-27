@@ -49,9 +49,11 @@
                     <h3 class="ml-4 text-xl font-bold text-gray-800">Billing</h3>
                 </div>
                 <p class="text-gray-600 mb-6">Handle patient bills and payment history.</p>
-                <a href="{% url 'billing_list' %}" class="inline-block bg-green-600 text-white px-5 py-2 rounded-lg hover:bg-green-700 transition">
+
+                {% comment %} <a href="{% url 'billing_list' %}" class="inline-block bg-green-600 text-white px-5 py-2 rounded-lg hover:bg-green-700 transition">
                     Manage Billing
-                </a>
+                </a> {% endcomment %}
+
             </div>
 
             <!-- Doctors Card -->
@@ -65,9 +67,11 @@
                     <h3 class="ml-4 text-xl font-bold text-gray-800">Doctors</h3>
                 </div>
                 <p class="text-gray-600 mb-6">View and manage doctors' profiles and schedules.</p>
-                <a href="{% url 'doctor_list' %}" class="inline-block bg-purple-600 text-white px-5 py-2 rounded-lg hover:bg-purple-700 transition">
+
+                {% comment %} <a href="{% url 'doctor_list' %}" class="inline-block bg-purple-600 text-white px-5 py-2 rounded-lg hover:bg-purple-700 transition">
                     View Doctors
-                </a>
+                </a> {% endcomment %}
+
             </div>
 
         </div>
