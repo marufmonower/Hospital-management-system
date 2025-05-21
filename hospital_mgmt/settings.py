@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'patients',
     'doctors',
     'appointments',
-    'billing',  
+    'billing',
+    'widget_tweaks',  
 ]
 
 MIDDLEWARE = [
